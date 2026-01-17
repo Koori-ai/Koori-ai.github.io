@@ -1,205 +1,989 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Susheela Ganesan - Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <style>
-    body {
-      background-color: #f8f9fa;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    .hero {
-      background-color: #EDE8DC;
-      color: black;
-      padding: 60px 0;
-    }
-    .section-title {
-      color: #3E3F5B;
-      margin-top: 40px;
-    }
-    .card {
-      margin-bottom: 20px;
-    }
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid white;
-      margin-bottom: 20px;
-    }
-    nav {
-      background-color: #B17F59;
-    }
-    nav a.nav-link {
-      color: #ffffff !important;
-      font-weight: 600;
-    }
-    nav a.nav-link:hover {
-      color: #cccccc !important;
-    }
-    .social-icons a {
-      color: black;
-      margin: 0 10px;
-      font-size: 30px;
-    }
-    .social-icons a:hover {
-      color: #000000;
-    }
-    a.fab {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  line-height: 1;         /* Avoid vertical alignment issues */
-  vertical-align: middle; /* Prevent bottom whitespace */
-  border: none;           /* Remove any border if added by browser */
-  padding: 0;             /* Reset padding */
-  margin: 10;              /* Reset margin */
-  background: transparent;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Susheela Ganesan - AI/ML Leader & Cybersecurity Strategist</title>
+    <meta name="description" content="AI/ML Delivery Leader, Cybersecurity Strategist with 15+ years experience in enterprise and government environments.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #B17F59;
+            --primary-dark: #8B5A3C;
+            --secondary: #3E3F5B;
+            --accent: #B17F59;
+            --hero-bg: #EDE8DC;
+            --text-dark: #2d2d2d;
+            --text-medium: #4a4a4a;
+            --text-light: #6b7280;
+            --bg-white: #ffffff;
+            --bg-light: #f8f9fa;
+            --bg-warm: #FAF8F5;
+            --border: #e5e0d8;
+            --success: #6B8E6B;
+        }
 
-.fab::before {
-  line-height: 1; /* Ensures the icon itself doesn't stretch vertically */
-}
-  </style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--bg-light);
+            font-size: 16px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--primary);
+            z-index: 1000;
+            padding: 0.9rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: white;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.9);
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--hero-bg);
+            padding-top: 70px;
+        }
+
+        .hero .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.25rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.2rem;
+            color: var(--text-medium);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .badge i {
+            font-size: 0.85rem;
+        }
+
+        .badge-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.9rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(177, 127, 89, 0.3);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid white;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            color: var(--secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        #about {
+            background: var(--bg-white);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .about-content strong {
+            color: var(--text-dark);
+        }
+
+        .highlight-box {
+            background: var(--bg-warm);
+            padding: 1.75rem 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .highlight-box p {
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        /* Skills Section */
+        #skills {
+            background: var(--bg-warm);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: box-shadow 0.3s;
+        }
+
+        .skill-category:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .skill-category h3 {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .skill-category h3 i {
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--hero-bg);
+            color: var(--text-medium);
+            padding: 0.4rem 0.9rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Projects Section */
+        #projects {
+            background: var(--bg-white);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .project-header {
+            background: var(--secondary);
+            padding: 1.25rem 1.5rem;
+            color: white;
+        }
+
+        .project-header h3 {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-header p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            font-weight: 400;
+        }
+
+        .project-body {
+            padding: 1.5rem;
+        }
+
+        .project-body > p {
+            color: var(--text-medium);
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .project-tech span {
+            background: var(--hero-bg);
+            color: var(--secondary);
+            padding: 0.25rem 0.65rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .project-link:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Education Section */
+        #education {
+            background: var(--bg-warm);
+        }
+
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .edu-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .edu-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .edu-card h3 {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Certifications */
+        #certifications {
+            background: var(--bg-white);
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .cert-item {
+            background: var(--bg-warm);
+            padding: 1rem 1.25rem;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border: 1px solid var(--border);
+        }
+
+        .cert-item i {
+            color: var(--success);
+            font-size: 1rem;
+        }
+
+        .cert-item span {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--secondary);
+            color: white;
+        }
+
+        #contact .section-header h2 {
+            color: white;
+        }
+
+        #contact .section-header p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        #contact .section-divider {
+            background: var(--primary);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            padding: 0.9rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-btn:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .contact-btn i {
+            font-size: 1.1rem;
+        }
+
+        .quote {
+            max-width: 650px;
+            margin: 3rem auto 0;
+            font-style: italic;
+            color: rgba(255,255,255,0.6);
+            font-size: 1.05rem;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d2d2d;
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 1.5rem 2rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .skills-grid,
+            .projects-grid,
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-badges {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-image img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .edu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3.5rem 1.5rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">Susheela Ganesan</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#experience">Experience</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#education">Education</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#certifications">Certifications</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Susheela Ganesan</a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <header class="hero text-center">
-    <div class="container">
-      <img src="https://media.licdn.com/dms/image/v2/C4E03AQGx2MiATc-Y-Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1540350152088?e=1750291200&v=beta&t=pR2p0nDVJPVFK7gLb-9_YUC2OB9zCqINeUw_NY2H-bE" alt="Susheela Ganesan" class="profile-img">
-      <h1 class="display-4">Susheela Ganesan</h1>
-      <p class="lead">AI/ML Delivery Leader | Cybersecurity Strategist | SAFe Agile Program Leader | Responsible AI Advisor </p>
-       <p class="lead">TS/SCI with CI Poly</p>
-      <p>PMP, CISM, AIGP, AWS ML | IBM | Booz Allen Hamilton | Washington DC-Baltimore Area</p>
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/susheela-ga/" target="_blank" class="fab fa-linkedin"></a>
-        <a href="https://github.com/Koori-ai" target="_blank" class="fab fa-github"></a>
-        <a href="mailto:susheelag888@gmail.com" target="_blank" class="fab fa-google"></a>
-        
-    </div>
-  </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Susheela Ganesan</h1>
+                <p class="tagline">AI/ML Delivery Leader · Cybersecurity Strategist · SAFe Agile Program Leader · Responsible AI Advisor</p>
+                <div class="hero-badges">
+                    <span class="badge"><i class="fas fa-shield-alt"></i> TS/SCI with CI Poly</span>
+                    <span class="badge"><i class="fas fa-briefcase"></i> 15+ Years Experience</span>
+                </div>
+                <div class="hero-badges">
+                    <span class="badge badge-outline"><i class="fas fa-certificate"></i> PMP</span>
+                    <span class="badge badge-outline"><i class="fas fa-certificate"></i> CISM</span>
+                    <span class="badge badge-outline"><i class="fas fa-certificate"></i> AIGP</span>
+                    <span class="badge badge-outline"><i class="fas fa-certificate"></i> AWS ML</span>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary"><i class="fas fa-folder-open"></i> View Projects</a>
+                    <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://media.licdn.com/dms/image/v2/C4E03AQGx2MiATc-Y-Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1540350152088?e=1750291200&v=beta&t=pR2p0nDVJPVFK7gLb-9_YUC2OB9zCqINeUw_NY2H-bE" alt="Susheela Ganesan" onerror="this.src='https://ui-avatars.com/api/?name=Susheela+Ganesan&size=300&background=B17F59&color=fff&bold=true&font-size=0.35'">
+            </div>
+        </div>
+    </section>
 
-  <section class="container" id="about">
-    <h2 class="section-title">About</h2>
-    <p>I'm a results-driven AI/ML Delivery Leader, Cybersecurity Consultant, and Agile Program Leader with 15+ years of experience delivering innovation across enterprise and government environments.</p>
-    <p>🔹 Expertise spans AI/ML, NLP, Computer Vision, Cloud Security, and Zero Trust Architecture—with a deep focus on designing secure, scalable, and data-centric solutions that drive business value and mission outcomes. Top industry certifications include PMP, CISM, AIGP, and AWS ML Specialty.</p>
-    <p>🔹 Led cloud transformations, built AI-driven systems, and guided Agile adoption across high-impact projects at Booz Allen Hamilton, IBM, and within federal intelligence communities. I thrive at the intersection of technical depth, program strategy, and governance.</p>
-    <p>🚀 Currently exploring leadership roles in AI Product Strategy, Cybersecurity, or Data-Driven Innovation.</p>
-  </section>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <p>Building secure, intelligent systems at the intersection of AI and cybersecurity</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="about-content">
+                <p>I'm a results-driven <strong>AI/ML Delivery Leader</strong>, <strong>Cybersecurity Consultant</strong>, and <strong>Agile Program Leader</strong> with 15+ years of experience delivering innovation across enterprise and government environments.</p>
+                
+                <div class="highlight-box">
+                    <p><strong>Areas of Expertise:</strong> AI/ML, NLP, Computer Vision, Cloud Security, and Zero Trust Architecture — with a deep focus on designing secure, scalable, and data-centric solutions that drive business value and mission outcomes.</p>
+                </div>
+                
+                <p>I've led cloud transformations, built AI-driven systems, and guided Agile adoption across high-impact projects at <strong>Booz Allen Hamilton</strong>, <strong>IBM</strong>, and within <strong>federal intelligence communities</strong>.</p>
+                
+                <p><strong>Currently exploring:</strong> Leadership roles in AI Product Strategy, Cybersecurity, or Data-Driven Innovation.</p>
+            </div>
+        </div>
+    </section>
 
-  <section class="container" id="experience">
-    <h2 class="section-title">Experience</h2>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Sr. AI/ML Cyber Security Program Manager</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Booz Allen Hamilton | Nov 2021 - Present</h6>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Deputy Cyber Security Program Manager</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Planet Technologies | Mar 2021 - Oct 2021</h6>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Senior IT Cybersecurity Consultant</h5>
-        <h6 class="card-subtitle mb-2 text-muted">IBM | Sep 2013 - Mar 2021</h6>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Senior Consultant</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Minnesota Department of Human Services | Nov 2005 - May 2010</h6>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Oracle Database Analyst</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Washington Hospital Healthcare System | Jun 2004 - Oct 2005</h6>
-      </div>
-    </div>
-  </section>
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technical Expertise</h2>
+                <p>Technologies and domains I specialize in</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> AI/ML & Data Science</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">RAG</span>
+                        <span class="skill-tag">LLMs</span>
+                        <span class="skill-tag">NLP</span>
+                        <span class="skill-tag">Computer Vision</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-shield-alt"></i> Cybersecurity</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Zero Trust Architecture</span>
+                        <span class="skill-tag">Cloud Security</span>
+                        <span class="skill-tag">NIST Frameworks</span>
+                        <span class="skill-tag">Risk Assessment</span>
+                        <span class="skill-tag">Threat Modeling</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">Terraform</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="container" id="education">
-    <h2 class="section-title">Education</h2>
-    <ul>
-      <li><strong>Master of Computer Applications (MCA)</strong>, Computers – University of Madras</li>
-      <li><strong>Master of Commerce</strong>, Accounting and Finance – University of Madras</li>
-    </ul>
-  </section>
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <p>AI-powered solutions I've built</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3><i class="fas fa-lock"></i> VaultZero</h3>
+                        <p>AI-Powered Zero Trust Assessment</p>
+                    </div>
+                    <div class="project-body">
+                        <p>An intelligent platform using RAG to assess and improve Zero Trust maturity across organizations. Combines AI with cybersecurity frameworks.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>RAG</span>
+                            <span>LLM</span>
+                            <span>Zero Trust</span>
+                        </div>
+                        <a href="https://github.com/Koori-ai/vaultzero" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
 
-  <section class="container" id="certifications">
-    <h2 class="section-title">Certifications</h2>
-    <ul>
-      <li>Certified Information Security Manager® (CISM) – ISACA</li>
-      <li>Artificial Intelligence Consultant Expert – Booz Allen Hamilton</li>
-      <li>Data Science Professional Certificate – Coursera</li>
-      <li>Data Science – Coursera</li>
-      <li>IBM Automation Essentials – IBM</li>
-      <li>AWS Certified Cloud Practitioner – AWS (ID: F06WRQQ14JBQQY3N)</li>
-      <li>AWS Certified Solutions Architect - Associate – AWS (ID: WFTWQRQK9NF1QC55)</li>
-      <li>Certified SAFe® 4 Scrum Master (SSM) – Scaled Agile, Inc.</li>
-      <li>Certified SAFe® 4.6 Advanced Scrum Master (SASM) – Scaled Agile, Inc.</li>
-      <li>Certified Zumba Instructor – Zumba North</li>
-      <li>DevOps – IBM</li>
-      <li>IBM CLM® for SAFe® - Level 1 – IBM</li>
-      <li>ICAgile Certified Professional - ICP – ICAgile</li>
-      <li>ITIL V3 – ITIL Foundation Certification</li>
-      <li>PMP, CAPM – Project Management Institute</li>
-    </ul>
-  </section>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3><i class="fas fa-robot"></i> MCP Implementation</h3>
+                        <p>Model Context Protocol with Local AI</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Complete MCP implementation integrating local AI models via Ollama with remote server capabilities through Hugging Face.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Ollama</span>
+                            <span>Hugging Face</span>
+                            <span>MCP</span>
+                        </div>
+                        <a href="https://github.com/Koori-ai/MCP-" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
 
-  <section class="container" id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p>Feel free to connect with me via the following channels:</p>
-    <ul class="list-unstyled">
-      <li ><strong>Email:</strong> <a href="mailto:susheelag888@gmail.com">Mail</a></li>
-      <li ><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/susheela-ga/" target="_blank">Linkedin</a></li>
-      <li ><strong>GitHub:</strong> <a href="https://github.com/Koori-ai" target="_blank">GitHub</a></li>
-    </ul>
-  </section>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3><i class="fas fa-user-shield"></i> Privacy Guardian</h3>
+                        <p>Mobile-First Privacy Management</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Comprehensive privacy management application built with React frontend and FastAPI backend for data privacy control.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>FastAPI</span>
+                            <span>JavaScript</span>
+                            <span>Python</span>
+                        </div>
+                        <a href="https://github.com/Koori-ai/privacy-guardian-app" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
 
-  <footer class="text-center mt-5 p-4 bg-light">
-    <p>&copy; 2025 Susheela Ganesan. All rights reserved.</p>
-  </footer>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3><i class="fas fa-users-cog"></i> AI Agents</h3>
+                        <p>Autonomous Agent Implementations</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Collection of AI agent implementations showcasing autonomous task execution and ReAct prompting patterns.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>LangChain</span>
+                            <span>OpenAI</span>
+                            <span>Jupyter</span>
+                        </div>
+                        <a href="https://github.com/Koori-ai/AI_Agents" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3><i class="fas fa-magic"></i> Generative AI</h3>
+                        <p>Research & Real-World GenAI Solutions</p>
+                    </div>
+                    <div class="project-body">
+                        <p>AI-driven projects designed to research, create, and solve real-world challenges with Generative AI technologies.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>LLMs</span>
+                            <span>Jupyter</span>
+                            <span>GenAI</span>
+                        </div>
+                        <a href="https://github.com/Koori-ai/Generative_AI-" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3><i class="fas fa-chart-line"></i> ML Project Hub</h3>
+                        <p>Machine Learning Portfolio</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Comprehensive collection of machine learning projects covering classification, regression, NLP, and computer vision.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Scikit-learn</span>
+                            <span>Pandas</span>
+                            <span>Jupyter</span>
+                        </div>
+                        <a href="https://github.com/Koori-ai/ML-Project-Hub" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header">
+                <h2>Education</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Master of Computer Applications</h3>
+                    <p>University of Madras</p>
+                </div>
+                <div class="edu-card">
+                    <i class="fas fa-university"></i>
+                    <h3>Master of Commerce</h3>
+                    <p>Accounting & Finance · University of Madras</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <div class="section-header">
+                <h2>Certifications</h2>
+                <p>Professional credentials and achievements</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>PMP – Project Management Institute</span>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>CISM – ISACA</span>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>AIGP – IAPP</span>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>AWS ML Specialty</span>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>AWS Solutions Architect</span>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>AWS Cloud Practitioner</span>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>AI Consultant Expert – Booz Allen</span>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>SAFe® Advanced Scrum Master</span>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>SAFe® Scrum Master</span>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Data Science – Coursera</span>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>ICAgile Certified Professional</span>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>ITIL V3 Foundation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Let's Connect</h2>
+                <p>Open to collaborations and opportunities</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/susheela-ga/" class="contact-btn" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/Koori-ai" class="contact-btn" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="mailto:susheelag3699@gmail.com" class="contact-btn">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+            <p class="quote">"Building secure, intelligent systems at the intersection of AI innovation and cybersecurity strategy."</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Susheela Ganesan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
-
 </html>
